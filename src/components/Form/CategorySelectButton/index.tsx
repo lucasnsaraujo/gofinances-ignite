@@ -9,12 +9,13 @@ import {
 
 interface Props extends TouchableOpacityProps { 
   title: string;
+  onPress: ()=> void;
 }
 
-export function CategorySelectButton({ title, ...rest }: Props) {
+export function CategorySelectButton({ title, onPress }: Props) {
 
   return (
-    <Container {...rest} activeOpacity={0.7}>
+    <Container onPress={onPress} activeOpacity={0.7}>
       <Category>{title}</Category>
       <Icon name='chevron-down'/>
     </Container>
